@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>StuBoo3i - 个人主页</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/css/font-awesome.min.css" rel="stylesheet">
     <script>
         tailwind.config = {
             theme: {
@@ -49,6 +49,7 @@
                     <li><a href="#research" class="hover:text-primary transition-colors">研究方向</a></li>
                     <li><a href="#projects" class="hover:text-primary transition-colors">项目经历</a></li>
                     <li><a href="#competitions" class="hover:text-primary transition-colors">比赛经历</a></li>
+                    <li><a href="#knowledge" class="hover:text-primary transition-colors">知识平台</a></li>
                     <li><a href="#github" class="hover:text-primary transition-colors">Github</a></li>
                     <li><a href="#contact" class="hover:text-primary transition-colors">联系我</a></li>
                 </ul>
@@ -66,6 +67,7 @@
                 <a href="#research" class="py-2 hover:text-primary transition-colors">研究方向</a>
                 <a href="#projects" class="py-2 hover:text-primary transition-colors">项目经历</a>
                 <a href="#competitions" class="py-2 hover:text-primary transition-colors">比赛经历</a>
+                <a href="#knowledge" class="py-2 hover:text-primary transition-colors">知识平台</a>
                 <a href="#github" class="py-2 hover:text-primary transition-colors">Github</a>
                 <a href="#contact" class="py-2 hover:text-primary transition-colors">联系我</a>
             </div>
@@ -236,8 +238,47 @@
         </div>
     </section>
 
+    <!-- 知识平台 -->
+    <section id="knowledge" class="py-16 bg-gray-50 section-fade">
+        <div class="container mx-auto px-4 max-w-4xl">
+            <h2 class="text-2xl font-bold mb-8 pb-2 border-b border-gray-200">知识平台</h2>
+            <div class="bg-white rounded-lg shadow-sm overflow-hidden">
+                <div class="p-6">
+                    <div class="flex flex-col md:flex-row md:items-center justify-between mb-4">
+                        <h3 class="text-xl font-semibold text-dark">复杂网络知识平台</h3>
+                        <span class="text-gray-500 mt-2 md:mt-0">持续更新中</span>
+                    </div>
+                    <p class="text-gray-600 mb-6">该平台专注于复杂网络领域的知识分享与可视化展示，包含复杂网络基础、传播动力学、拓扑分析等内容，提供交互式学习体验。</p>
+                    
+                    <div class="flex flex-wrap gap-4 mb-6">
+                        <div class="flex items-center p-3 bg-blue-50 rounded-lg">
+                            <i class="fa fa-line-chart text-primary mr-3"></i>
+                            <span>复杂网络基础</span>
+                        </div>
+                        <div class="flex items-center p-3 bg-blue-50 rounded-lg">
+                            <i class="fa fa-exchange text-primary mr-3"></i>
+                            <span>复杂网络动力学</span>
+                        </div>
+                        <div class="flex items-center p-3 bg-blue-50 rounded-lg">
+                            <i class="fa fa-database text-primary mr-3"></i>
+                            <span>复杂网络拓扑分析</span>
+                        </div>
+                        <div class="flex items-center p-3 bg-blue-50 rounded-lg">
+                            <i class="fa fa-code text-primary mr-3"></i>
+                            <span>复杂网络进阶学习</span>
+                        </div>
+                    </div>
+                    
+                    <a href="https://stuboo3i.github.io/ComplexNetwork/home.html" target="_blank" class="inline-flex items-center px-5 py-2 bg-primary text-white rounded-lg hover:bg-blue-700 transition-colors">
+                        <i class="fa fa-external-link mr-2"></i> 访问平台
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Github项目 -->
-    <section id="github" class="py-16 bg-gray-50 section-fade">
+    <section id="github" class="py-16 bg-white section-fade">
         <div class="container mx-auto px-4 max-w-4xl">
             <h2 class="text-2xl font-bold mb-8 pb-2 border-b border-gray-200">Github</h2>
             <div class="grid md:grid-cols-2 gap-6">
