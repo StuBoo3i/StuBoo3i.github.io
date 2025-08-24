@@ -242,37 +242,54 @@
     <section id="knowledge" class="py-16 bg-gray-50 section-fade">
         <div class="container mx-auto px-4 max-w-4xl">
             <h2 class="text-2xl font-bold mb-8 pb-2 border-b border-gray-200">知识平台</h2>
-            <div class="bg-white rounded-lg shadow-sm overflow-hidden">
-                <div class="p-6">
-                    <div class="flex flex-col md:flex-row md:items-center justify-between mb-4">
-                        <h3 class="text-xl font-semibold text-dark">复杂网络知识平台</h3>
-                        <span class="text-gray-500 mt-2 md:mt-0">持续更新中</span>
-                    </div>
-                    <p class="text-gray-600 mb-6">该平台专注于复杂网络领域的知识分享与可视化展示，包含复杂网络基础、传播动力学、拓扑分析等内容，提供交互式学习体验。</p>
+            <div class="bg-white rounded-lg shadow-sm overflow-hidden hover:shadow-md transition-all duration-300 border border-gray-100 group">
+                <div class="p-6 relative">
+                    <!-- 装饰性几何元素 -->
+                    <div class="absolute -top-6 -right-6 w-24 h-24 bg-primary/5 rounded-full blur-xl"></div>
+                    <div class="absolute -bottom-4 -left-4 w-16 h-16 bg-primary/5 rounded-full blur-lg"></div>
                     
-                    <div class="flex flex-wrap gap-4 mb-6">
-                        <div class="flex items-center p-3 bg-blue-50 rounded-lg">
+                    <div class="flex flex-col md:flex-row md:items-center justify-between mb-4 relative z-10">
+                        <h3 class="text-xl font-semibold text-dark flex items-center">
+                            <i class="fa fa-connectdevelop text-primary mr-2"></i>
+                            复杂网络知识平台
+                        </h3>
+                        <span class="text-gray-500 mt-2 md:mt-0 inline-flex items-center">
+                            <span class="w-2 h-2 bg-green-500 rounded-full mr-2 animate-pulse"></span>
+                            持续更新中
+                        </span>
+                    </div>
+                    
+                    <p class="text-gray-600 mb-6 relative z-10">
+                        该平台专注于复杂网络领域的知识分享与可视化展示，包含复杂网络基础、传播动力学、拓扑分析等内容，提供交互式学习体验。
+                    </p>
+                    
+                    <div class="flex flex-wrap gap-4 mb-6 relative z-10">
+                        <div class="flex items-center p-3 bg-blue-50 rounded-lg hover:bg-blue-100 transition-colors border border-transparent hover:border-primary/20">
                             <i class="fa fa-line-chart text-primary mr-3"></i>
                             <span>复杂网络基础</span>
                         </div>
-                        <div class="flex items-center p-3 bg-blue-50 rounded-lg">
+                        <div class="flex items-center p-3 bg-blue-50 rounded-lg hover:bg-blue-100 transition-colors border border-transparent hover:border-primary/20">
                             <i class="fa fa-exchange text-primary mr-3"></i>
                             <span>复杂网络动力学</span>
                         </div>
-                        <div class="flex items-center p-3 bg-blue-50 rounded-lg">
+                        <div class="flex items-center p-3 bg-blue-50 rounded-lg hover:bg-blue-100 transition-colors border border-transparent hover:border-primary/20">
                             <i class="fa fa-database text-primary mr-3"></i>
                             <span>复杂网络拓扑分析</span>
                         </div>
-                        <div class="flex items-center p-3 bg-blue-50 rounded-lg">
+                        <div class="flex items-center p-3 bg-blue-50 rounded-lg hover:bg-blue-100 transition-colors border border-transparent hover:border-primary/20">
                             <i class="fa fa-code text-primary mr-3"></i>
                             <span>复杂网络进阶学习</span>
                         </div>
                     </div>
                     
-                    <a href="https://stuboo3i.github.io/ComplexNetwork/home.html" target="_blank" class="inline-flex items-center px-5 py-2 bg-primary text-white rounded-lg hover:bg-blue-700 transition-colors">
+                    <a href="https://stuboo3i.github.io/ComplexNetwork/home.html" target="_blank" class="inline-flex items-center px-5 py-2 bg-primary text-white rounded-lg hover:bg-blue-700 transition-all duration-300 transform hover:-translate-y-1 shadow-md hover:shadow-lg">
                         <i class="fa fa-external-link mr-2"></i> 访问平台
+                        <i class="fa fa-arrow-right ml-2 transform group-hover:translate-x-1 transition-transform"></i>
                     </a>
                 </div>
+                
+                <!-- 底部科技感装饰条 -->
+                <div class="h-1 w-full bg-gradient-to-r from-primary/30 via-primary to-primary/30"></div>
             </div>
         </div>
     </section>
