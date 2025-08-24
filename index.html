@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StuBoo3i - 个人主页</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#165DFF',
+                        dark: '#1F2937',
+                        light: '#F9FAFB'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .section-fade {
+                opacity: 0;
+                transform: translateY(20px);
+                transition: opacity 0.6s ease, transform 0.6s ease;
+            }
+            .section-visible {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans text-gray-800">
+    <!-- 导航栏 -->
+    <header class="bg-white shadow-sm sticky top-0 z-50 transition-all duration-300">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <h1 class="text-xl font-bold text-primary">StuBoo3i</h1>
+            <nav class="hidden md:block">
+                <ul class="flex space-x-8">
+                    <li><a href="#about" class="hover:text-primary transition-colors">关于我</a></li>
+                    <li><a href="#education" class="hover:text-primary transition-colors">教育经历</a></li>
+                    <li><a href="#research" class="hover:text-primary transition-colors">研究方向</a></li>
+                    <li><a href="#projects" class="hover:text-primary transition-colors">项目经历</a></li>
+                    <li><a href="#contact" class="hover:text-primary transition-colors">联系我</a></li>
+                </ul>
+            </nav>
+            <button class="md:hidden text-gray-600" id="menuBtn">
+                <i class="fa fa-bars text-xl"></i>
+            </button>
+        </div>
+        <!-- 移动端菜单 -->
+        <div id="mobileMenu" class="hidden md:hidden bg-white border-t">
+            <div class="container mx-auto px-4 py-2 flex flex-col space-y-3">
+                <a href="#about" class="py-2 hover:text-primary transition-colors">关于我</a>
+                <a href="#education" class="py-2 hover:text-primary transition-colors">教育经历</a>
+                <a href="#research" class="py-2 hover:text-primary transition-colors">研究方向</a>
+                <a href="#projects" class="py-2 hover:text-primary transition-colors">项目经历</a>
+                <a href="#contact" class="py-2 hover:text-primary transition-colors">联系我</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- 英雄区域 -->
+    <section class="bg-white py-20 border-b border-gray-100">
+        <div class="container mx-auto px-4 text-center">
+            <img src="https://picsum.photos/id/64/200/200" alt="个人头像" class="rounded-full w-36 h-36 mx-auto mb-6 border-2 border-gray-200 object-cover">
+            <h2 class="text-3xl md:text-4xl font-bold mb-3">王佳波</h2>
+            <p class="text-gray-600 text-lg mb-2">网络与信息安全研究爱好者</p>
+            <p class="text-primary font-medium">西安交通大学网络与信息安全硕士拟录取 | 东北大学信息安全学士</p>
+        </div>
+    </section>
+
+    <!-- 关于我 -->
+    <section id="about" class="py-16 bg-white section-fade">
+        <div class="container mx-auto px-4 max-w-4xl">
+            <h2 class="text-2xl font-bold mb-8 pb-2 border-b border-gray-200">关于我</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="md:col-span-2">
+                    <p class="mb-4 text-gray-700">
+                        扎实掌握网络与信息安全理论与技术，熟悉软件开发、代码优化和安全性分析。热爱网络与信息安全研究，拥有强大的学习能力和抗压能力。
+                    </p>
+                    <p class="mb-6 text-gray-700">
+                        英语六级，具备外语沟通和文献阅读能力。善于团队合作，具有丰富的沟通协调经验。热衷于技术分享，活跃于GitHub开源社区和技术博客平台。
+                    </p>
+                    
+                    <h3 class="text-lg font-semibold mb-3">核心技能</h3>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="bg-blue-50 text-primary px-3 py-1 rounded-full text-sm">C++/Python</span>
+                        <span class="bg-blue-50 text-primary px-3 py-1 rounded-full text-sm">网络安全</span>
+                        <span class="bg-blue-50 text-primary px-3 py-1 rounded-full text-sm">复杂网络</span>
+                        <span class="bg-blue-50 text-primary px-3 py-1 rounded-full text-sm">漏洞检测</span>
+                        <span class="bg-blue-50 text-primary px-3 py-1 rounded-full text-sm">Web开发</span>
+                        <span class="bg-blue-50 text-primary px-3 py-1 rounded-full text-sm">Qt/MFC</span>
+                        <span class="bg-blue-50 text-primary px-3 py-1 rounded-full text-sm">MySQL/MongoDB</span>
+                        <span class="bg-blue-50 text-primary px-3 py-1 rounded-full text-sm">Git</span>
+                    </div>
+                </div>
+                <div class="bg-gray-50 p-5 rounded-lg">
+                    <h3 class="text-lg font-semibold mb-3">初试成绩</h3>
+                    <div class="space-y-2 text-gray-700">
+                        <div class="flex justify-between">
+                            <span>总分</span>
+                            <span class="font-medium">390分</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span>数学</span>
+                            <span class="font-medium">127分</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span>外语</span>
+                            <span class="font-medium">65分</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span>政治</span>
+                            <span class="font-medium">66分</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span>专业综合</span>
+                            <span class="font-medium">132分</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 教育经历 -->
+    <section id="education" class="py-16 bg-gray-50 section-fade">
+        <div class="container mx-auto px-4 max-w-4xl">
+            <h2 class="text-2xl font-bold mb-8 pb-2 border-b border-gray-200">教育经历</h2>
+            <div class="space-y-8">
+                <div class="bg-white p-6 rounded-lg shadow-sm">
+                    <div class="flex flex-col md:flex-row md:items-center justify-between mb-2">
+                        <h3 class="text-xl font-semibold text-dark">东北大学</h3>
+                        <span class="text-gray-500">2020.09 - 2024.06</span>
+                    </div>
+                    <p class="text-primary mb-2">本科 | 信息安全专业</p>
+                    <p class="text-gray-600">系统学习信息安全核心课程，包括密码学、网络安全、操作系统安全等，打下扎实的理论基础。</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow-sm">
+                    <div class="flex flex-col md:flex-row md:items-center justify-between mb-2">
+                        <h3 class="text-xl font-semibold text-dark">西安交通大学</h3>
+                        <span class="text-gray-500">2024.09 - 至今（拟录取）</span>
+                    </div>
+                    <p class="text-primary mb-2">硕士 | 网络与信息安全专业</p>
+                    <p class="text-gray-600">考生编号：106985622420356，将深入研究网络安全与复杂网络相关领域。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 研究方向 -->
+    <section id="research" class="py-16 bg-white section-fade">
+        <div class="container mx-auto px-4 max-w-4xl">
+            <h2 class="text-2xl font-bold mb-8 pb-2 border-b border-gray-200">研究方向</h2>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="flex p-5 border border-gray-100 rounded-lg hover:border-primary transition-colors">
+                    <div class="text-primary mr-4 mt-1">
+                        <i class="fa fa-shield text-2xl"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-semibold mb-2">网络与信息安全</h3>
+                        <p class="text-gray-600">密码学应用、漏洞检测与防御、软件安全审计、网络攻击与防御技术研究。</p>
+                    </div>
+                </div>
+                
+                <div class="flex p-5 border border-gray-100 rounded-lg hover:border-primary transition-colors">
+                    <div class="text-primary mr-4 mt-1">
+                        <i class="fa fa-sitemap text-2xl"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-semibold mb-2">复杂网络分析</h3>
+                        <p class="text-gray-600">网络拓扑特性建模、网络传播机理分析、网络鲁棒性评估与优化。</p>
+                    </div>
+                </div>
+                
+                <div class="flex p-5 border border-gray-100 rounded-lg hover:border-primary transition-colors">
+                    <div class="text-primary mr-4 mt-1">
+                        <i class="fa fa-code text-2xl"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-semibold mb-2">安全开发技术</h3>
+                        <p class="text-gray-600">安全工具开发、可视化系统设计、自动化安全测试技术研究与实现。</p>
+                    </div>
+                </div>
+                
+                <div class="flex p-5 border border-gray-100 rounded-lg hover:border-primary transition-colors">
+                    <div class="text-primary mr-4 mt-1">
+                        <i class="fa fa-wifi text-2xl"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-semibold mb-2">无线网络安全</h3>
+                        <p class="text-gray-600">无线协议安全分析、轻量级密码算法应用、无线网络攻击与防御。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 项目经历 -->
+    <section id="projects" class="py-16 bg-gray-50 section-fade">
+        <div class="container mx-auto px-4 max-w-4xl">
+            <h2 class="text-2xl font-bold mb-8 pb-2 border-b border-gray-200">项目经历</h2>
+            <div class="space-y-8">
+                <!-- 项目1 -->
+                <div class="bg-white rounded-lg shadow-sm overflow-hidden">
+                    <div class="p-6">
+                        <div class="flex flex-col md:flex-row md:items-center justify-between mb-3">
+                            <h3 class="text-xl font-semibold text-dark">复杂网络风险传播可视化模拟系统</h3>
+                            <span class="text-gray-500">2023.12 - 2024.06</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">毕业设计项目，设计实现复杂网络多种风险传播模型的实时分析和动态过程模拟可视化系统。</p>
+                        <div class="mb-4">
+                            <h4 class="font-medium text-gray-800 mb-2">主要工作：</h4>
+                            <ul class="list-disc pl-5 text-gray-600 space-y-1">
+                                <li>基于图数据库neo4j设计实现网络图谱数据分析与管理模块</li>
+                                <li>设计自定义交互式命令行模块，实现网络特征图表绘制功能</li>
+                                <li>提出基于Louvain社团划分的复杂网络压缩算法，优化动态拓扑可视化效果</li>
+                                <li>实现基于孤立森林模型的异常检测，使用网格搜索优化模型参数</li>
+                                <li>模拟网络攻击并评估网络鲁棒性，预测网络雪崩效应</li>
+                            </ul>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="inline-block bg-blue-50 text-primary text-sm px-2 py-1 rounded mr-3">Django</span>
+                            <span class="inline-block bg-blue-50 text-primary text-sm px-2 py-1 rounded mr-3">D3.js</span>
+                            <span class="inline-block bg-blue-50 text-primary text-sm px-2 py-1 rounded mr-3">Neo4j</span>
+                            <a href="https://github.com/StuBoo3i/network-visualization" target="_blank" class="text-primary hover:text-blue-700 ml-auto flex items-center text-sm">
+                                <i class="fa fa-github mr-1"></i> 查看源码
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 项目2 -->
+                <div class="bg-white rounded-lg shadow-sm overflow-hidden">
+                    <div class="p-6">
+                        <div class="flex flex-col md:flex-row md:items-center justify-between mb-3">
+                            <h3 class="text-xl font-semibold text-dark">C++程序安全性评估系统</h3>
+                            <div class="flex items-center">
+                                <span class="text-gray-500 mr-3">2023.06 - 2023.08</span>
+                                <span class="bg-green-50 text-green-700 text-xs px-2 py-1 rounded">组长</span>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 mb-4">东软实习项目，基于软件白盒测试的程序安全性评估系统，通过静态审计生成安全风险报告。</p>
+                        <div class="mb-4">
+                            <h4 class="font-medium text-gray-800 mb-2">主要工作：</h4>
+                            <ul class="list-disc pl-5 text-gray-600 space-y-1">
+                                <li>设计系统功能架构，完成任务分配与进度管理，制定编码规范</li>
+                                <li>设计数据库结构与分类功能模块，完成接口整合</li>
+                                <li>实现变量追踪、函数调用树构建、关键数据加解密等核心功能</li>
+                                <li>集成源码编译、Fuzz测试、动态审计等接口功能</li>
+                            </ul>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="inline-block bg-blue-50 text-primary text-sm px-2 py-1 rounded mr-3">C++</span>
+                            <span class="inline-block bg-blue-50 text-primary text-sm px-2 py-1 rounded mr-3">Qt</span>
+                            <span class="inline-block bg-blue-50 text-primary text-sm px-2 py-1 rounded mr-3">MongoDB</span>
+                            <a href="https://github.com/StuBoo3i/cpp-security-evaluator" target="_blank" class="text-primary hover:text-blue-700 ml-auto flex items-center text-sm">
+                                <i class="fa fa-github mr-1"></i> 查看源码
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 项目3 -->
+                <div class="bg-white rounded-lg shadow-sm overflow-hidden">
+                    <div class="p-6">
+                        <div class="flex flex-col md:flex-row md:items-center justify-between mb-3">
+                            <h3 class="text-xl font-semibold text-dark">Web漏洞扫描系统</h3>
+                            <div class="flex items-center">
+                                <span class="text-gray-500 mr-3">2023.03 - 2023.05</span>
+                                <span class="bg-blue-50 text-blue-700 text-xs px-2 py-1 rounded">组员</span>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="inline-block bg-blue-50 text-primary text-sm px-2 py-1 rounded mr-3">Python</span>
+                            <span class="inline-block bg-blue-50 text-primary text-sm px-2 py-1 rounded mr-3">Flask</span>
+                            <span class="inline-block bg-blue-50 text-primary text-sm px-2 py-1 rounded mr-3">MySQL</span>
+                            <a href="https://github.com/StuBoo3i/web-vulnerability-scanner" target="_blank" class="text-primary hover:text-blue-700 ml-auto flex items-center text-sm">
+                                <i class="fa fa-github mr-1"></i> 查看源码
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 项目4 -->
+                <div class="bg-white rounded-lg shadow-sm overflow-hidden">
+                    <div class="p-6">
+                        <div class="flex flex-col md:flex-row md:items-center justify-between mb-3">
+                            <h3 class="text-xl font-semibold text-dark">中间人攻击应用开发</h3>
+                            <div class="flex items-center">
+                                <span class="text-gray-500 mr-3">2022.10 - 2022.12</span>
+                                <span class="bg-purple-50 text-purple-700 text-xs px-2 py-1 rounded">独立完成</span>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="inline-block bg-blue-50 text-primary text-sm px-2 py-1 rounded mr-3">C++</span>
+                            <span class="inline-block bg-blue-50 text-primary text-sm px-2 py-1 rounded mr-3">Qt</span>
+                            <span class="inline-block bg-blue-50 text-primary text-sm px-2 py-1 rounded mr-3">Socket</span>
+                            <a href="https://github.com/StuBoo3i/arp-spoofing-tool" target="_blank" class="text-primary hover:text-blue-700 ml-auto flex items-center text-sm">
+                                <i class="fa fa-github mr-1"></i> 查看源码
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 联系方式 -->
+    <section id="contact" class="py-16 bg-white section-fade">
+        <div class="container mx-auto px-4 max-w-4xl">
+            <h2 class="text-2xl font-bold mb-8 pb-2 border-b border-gray-200">联系我</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div>
+                    <div class="space-y-4">
+                        <div class="flex items-center">
+                            <div class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-primary mr-4">
+                                <i class="fa fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-medium">邮箱</h3>
+                                <p class="text-gray-600">neuwangjiabo@163.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center">
+                            <div class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-primary mr-4">
+                                <i class="fa fa-phone"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-medium">电话</h3>
+                                <p class="text-gray-600">15802423776</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="font-medium mb-4">社交平台</h3>
+                    <div class="grid grid-cols-2 gap-4">
+                        <a href="https://github.com/StuBoo3i" target="_blank" class="flex items-center p-3 border border-gray-100 rounded-lg hover:border-primary hover:bg-blue-50 transition-colors">
+                            <i class="fa fa-github text-xl text-primary mr-3"></i>
+                            <div>
+                                <p class="font-medium">GitHub</p>
+                                <p class="text-sm text-gray-600">StuBoo3i</p>
+                            </div>
+                        </a>
+                        
+                        <a href="https://zhihu.com/people/StuBoo3i" target="_blank" class="flex items-center p-3 border border-gray-100 rounded-lg hover:border-primary hover:bg-blue-50 transition-colors">
+                            <i class="fa fa-book text-xl text-primary mr-3"></i>
+                            <div>
+                                <p class="font-medium">知乎</p>
+                                <p class="text-sm text-gray-600">StuBoo3i</p>
+                            </div>
+                        </a>
+                        
+                        <a href="https://blog.csdn.net/StuBoo3i" target="_blank" class="flex items-center p-3 border border-gray-100 rounded-lg hover:border-primary hover:bg-blue-50 transition-colors">
+                            <i class="fa fa-code text-xl text-primary mr-3"></i>
+                            <div>
+                                <p class="font-medium">技术博客</p>
+                                <p class="text-sm text-gray-600">CSDN博客</p>
+                            </div>
+                        </a>
+                        
+                        <a href="https://linkedin.com/in/StuBoo3i" target="_blank" class="flex items-center p-3 border border-gray-100 rounded-lg hover:border-primary hover:bg-blue-50 transition-colors">
+                            <i class="fa fa-linkedin text-xl text-primary mr-3"></i>
+                            <div>
+                                <p class="font-medium">LinkedIn</p>
+                                <p class="text-sm text-gray-600">王佳波</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="bg-dark text-white py-8">
+        <div class="container mx-auto px-4 text-center">
+            <p>© 2024 StuBoo3i. All rights reserved.</p>
+            <p class="text-gray-400 text-sm mt-2">网络与信息安全研究爱好者 | 西安交通大学硕士研究生</p>
+        </div>
+    </footer>
+
+    <script>
+        // 移动端菜单切换
+        document.getElementById('menuBtn').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobileMenu');
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // 滚动显示动画
+        document.addEventListener('DOMContentLoaded', function() {
+            const sections = document.querySelectorAll('.section-fade');
+            
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
+            
+            const observer = new IntersectionObserver(function(entries, observer) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('section-visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+            
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+        });
+
+        // 平滑滚动
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // 关闭移动端菜单
+                    document.getElementById('mobileMenu').classList.add('hidden');
+                }
+            });
+        });
+
+        // 导航栏滚动效果
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.classList.add('py-2');
+                header.classList.remove('py-4');
+            } else {
+                header.classList.add('py-4');
+                header.classList.remove('py-2');
+            }
+        });
+    </script>
+</body>
+</html>
