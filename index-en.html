@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StuBoo3i - Personal Homepage</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#165DFF',
+                        dark: '#1F2937',
+                        light: '#F9FAFB'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .section-fade {
+                opacity: 0;
+                transform: translateY(20px);
+                transition: opacity 0.6s ease, transform 0.6s ease;
+            }
+            .section-visible {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans text-gray-800">
+    <!-- Navigation -->
+    <header class="bg-white shadow-sm sticky top-0 z-50 transition-all duration-300">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <h1 class="text-xl font-bold text-primary">StuBoo3i</h1>
+            <nav class="hidden md:block">
+                <ul class="flex space-x-8">
+                    <li><a href="#about" class="hover:text-primary transition-colors">About</a></li>
+                    <li><a href="#education" class="hover:text-primary transition-colors">Education</a></li>
+                    <li><a href="#research" class="hover:text-primary transition-colors">Research</a></li>
+                    <li><a href="#projects" class="hover:text-primary transition-colors">Projects</a></li>
+                    <li><a href="#competitions" class="hover:text-primary transition-colors">Competitions</a></li>
+                    <li><a href="#github" class="hover:text-primary transition-colors">Github</a></li>
+                    <li><a href="#contact" class="hover:text-primary transition-colors">Contact</a></li>
+                    <li><a href="index.html" class="hover:text-primary transition-colors">中文</a></li>
+                </ul>
+            </nav>
+            <button class="md:hidden text-gray-600" id="menuBtn">
+                <i class="fa fa-bars text-xl"></i>
+            </button>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="hidden md:hidden bg-white border-t">
+            <div class="container mx-auto px-4 py-2 flex flex-col space-y-3">
+                <a href="#about" class="py-2 hover:text-primary transition-colors">About</a>
+                <a href="#education" class="py-2 hover:text-primary transition-colors">Education</a>
+                <a href="#research" class="py-2 hover:text-primary transition-colors">Research</a>
+                <a href="#projects" class="py-2 hover:text-primary transition-colors">Projects</a>
+                <a href="#competitions" class="py-2 hover:text-primary transition-colors">Competitions</a>
+                <a href="#github" class="py-2 hover:text-primary transition-colors">Github</a>
+                <a href="#contact" class="py-2 hover:text-primary transition-colors">Contact</a>
+                <a href="index.html" class="py-2 hover:text-primary transition-colors">中文</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="bg-white py-20 border-b border-gray-100">
+        <div class="container mx-auto px-4 text-center">
+            <img src="74348042.jpg" alt="Profile Picture" class="rounded-full w-36 h-36 mx-auto mb-6 border-2 border-gray-200 object-cover">
+            <h2 class="text-3xl md:text-4xl font-bold mb-3">StuBoo3i</h2>
+            <p class="text-gray-600 text-lg mb-2">Cybersecurity & Graph Neural Network Research</p>
+            <p class="text-primary font-medium">Master Student @ Xi'an Jiaotong University | Bachelor @ Northeastern University</p>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 bg-white section-fade">
+        <div class="container mx-auto px-4 max-w-4xl">
+            <h2 class="text-2xl font-bold mb-8 pb-2 border-b border-gray-200">About Me</h2>
+            <div class="text-center py-6">
+                <p class="text-lg text-gray-700">Welcome to discuss topics related to network and information security. I look forward to exploring technical issues with peers and making progress together.</p>
+                <p class="text-lg text-gray-700 mt-4">If you have any cooperation intentions or questions, please feel free to contact me through the contact information below.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="py-16 bg-gray-50 section-fade">
+        <div class="container mx-auto px-4 max-w-4xl">
+            <h2 class="text-2xl font-bold mb-8 pb-2 border-b border-gray-200">Education</h2>
+            <div class="space-y-8">
+                <div class="bg-white p-6 rounded-lg shadow-sm">
+                    <div class="flex flex-col md:flex-row md:items-center justify-between mb-2">
+                        <h3 class="text-xl font-semibold text-dark">Northeastern University</h3>
+                        <span class="text-gray-500">Sep 2020 - Jun 2024</span>
+                    </div>
+                    <p class="text-primary mb-2">Bachelor | Information Security</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow-sm">
+                    <div class="flex flex-col md:flex-row md:items-center justify-between mb-2">
+                        <h3 class="text-xl font-semibold text-dark">Xi'an Jiaotong University</h3>
+                        <span class="text-gray-500">Sep 2025 - Present</span>
+                    </div>
+                    <p class="text-primary mb-2">Master | Network and Information Security</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Research Section -->
+    <section id="research" class="py-16 bg-white section-fade">
+        <div class="container mx-auto px-4 max-w-4xl">
+            <h2 class="text-2xl font-bold mb-8 pb-2 border-b border-gray-200">Research Interests</h2>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="flex p-5 border border-gray-100 rounded-lg hover:border-primary transition-colors">
+                    <div class="text-primary mr-4 mt-1">
+                        <i class="fa fa-shield text-2xl"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-semibold mb-2">AI Security</h3>
+                        <p class="text-gray-600">Focusing on AI model robustness and privacy protection, building security barriers for AI applications in high-risk scenarios through adversarial defense, federated learning and other technologies.</p>
+                    </div>
+                </div>
+                
+                <div class="flex p-5 border border-gray-100 rounded-lg hover:border-primary transition-colors">
+                    <div class="text-primary mr-4 mt-1">
+                        <i class="fa fa-sitemap text-2xl"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-semibold mb-2">Complex Network Analysis</h3>
+                        <p class="text-gray-600">Researching the implementation of GNN in complex relationship modeling, focusing on exploring its applications in security scenarios such as network attack forensics and malicious threat detection, optimizing graph learning mechanisms to release data value.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-16 bg-gray-50 section-fade">
+        <div class="container mx-auto px-4 max-w-4xl">
+            <h2 class="text-2xl font-bold mb-8 pb-2 border-b border-gray-200">Project Experience</h2>
+            <div class="space-y-8">
+                <!-- Project 1 -->
+                <div class="bg-white rounded-lg shadow-sm overflow-hidden">
+                    <div class="p-6">
+                        <div class="flex flex-col md:flex-row md:items-center justify-between mb-3">
+                            <h3 class="text-xl font-semibold text-dark">Complex Network Risk Propagation Visualization System</h3>
+                            <span class="text-gray-500">Dec 2023 - Jun 2024</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">Graduation project, designing and implementing a real-time analysis and dynamic process simulation visualization system for multiple risk propagation models in complex networks.</p>
+                        <div class="mb-4">
+                            <h4 class="font-medium text-gray-800 mb-2">Main Work:</h4>
+                            <ul class="list-disc pl-5 text-gray-600 space-y-1">
+                                <li>Designed and implemented network graph data analysis and management module based on neo4j graph database</li>
+                                <li>Designed a custom interactive command line module to implement network characteristic chart drawing functions</li>
+                                <li>Proposed a complex network compression algorithm based on Louvain community division to optimize dynamic topology visualization</li>
+                                <li>Implemented anomaly detection based on Isolation Forest model, optimized model parameters using grid search</li>
+                                <li>Simulated network attacks and evaluated network robustness, predicted network avalanche effects</li>
+                            </ul>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="inline-block bg-blue-50 text-primary text-sm px-2 py-1 rounded mr-3">Django</span>
+                            <span class="inline-block bg-blue-50 text-primary text-sm px-2 py-1 rounded mr-3">D3.js</span>
+                            <span class="inline-block bg-blue-50 text-primary text-sm px-2 py-1 rounded mr-3">Neo4j</span>
+                            <a href="https://github.com/StuBoo3i/network-visualization" target="_blank" class="text-primary hover:text-blue-700 ml-auto flex items-center text-sm">
+                                <i class="fa fa-github mr-1"></i> View Source
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="bg-white rounded-lg shadow-sm overflow-hidden">
+                    <div class="p-6">
+                        <div class="flex flex-col md:flex-row md:items-center justify-between mb-3">
+                            <h3 class="text-xl font-semibold text-dark">C++ Program Security Evaluation System</h3>
+                            <div class="flex items-center">
+                                <span class="text-gray-500 mr-3">Jun 2023 - Aug 2023</span>
+                                <span class="bg-green-50 text-green-700 text-xs px-2 py-1 rounded">Team Leader</span>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 mb-4">A program security evaluation system based on software white-box testing, generating security risk reports through static auditing.</p>
+                        <div class="mb-4">
+                            <h4 class="font-medium text-gray-800 mb-2">Main Work:</h4>
+                            <ul class="list-disc pl-5 text-gray-600 space-y-1">
+                                <li>Designed system functional architecture, completed task allocation and progress management, formulated coding standards</li>
+                                <li>Designed database structure and classification function modules, completed interface integration</li>
+                                <li>Implemented core functions such as variable tracking, function call tree construction, key data encryption and decryption</li>
+                                <li>Integrated interface functions such as source code compilation, Fuzz testing, and dynamic auditing</li>
+                            </ul>
+                        </div>
+                        <div class="flex items-center">
+                            <span class="inline-block bg-blue-50 text-primary text-sm px-2 py-1 rounded mr-3">C++</span>
+                            <span class="inline-block bg-blue-50 text-primary text-sm px-2 py-1 rounded mr-3">Qt</span>
+                            <span class="inline-block bg-blue-50 text-primary text-sm px-2 py-1 rounded mr-3">MongoDB</span>
+                            <a href="https://github.com/StuBoo3i/cpp-security-evaluator" target="_blank" class="text-primary hover:text-blue-700 ml-auto flex items-center text-sm">
+                                <i class="fa fa-github mr-1"></i> View Source
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Competition Experience -->
+    <section id="competitions" class="py-16 bg-white section-fade">
+        <div class="container mx-auto px-4 max-w-4xl">
+            <h2 class="text-2xl font-bold mb-8 pb-2 border-b border-gray-200">Competition Experience</h2>
+            <div class="space-y-8">
+                <div class="bg-gray-50 p-6 rounded-lg shadow-sm">
+                    <div class="flex flex-col md:flex-row md:items-center justify-between mb-2">
+                        <h3 class="text-xl font-semibold text-dark">National College Student Information Security Competition</h3>
+                        <div class="flex items-center mt-2 md:mt-0">
+                            <span class="text-gray-500 mr-3">May 2023 - Aug 2023</span>
+                            <span class="bg-yellow-50 text-yellow-700 text-xs px-2 py-1 rounded">Provincial Second Prize</span>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-4">Blockchain-based supply chain trusted authentication system to solve the problems of opaque and tamper-prone supply chain information.</p>
+                    <div class="flex items-center">
+                        <span class="inline-block bg-blue-50 text-primary text-sm px-2 py-1 rounded mr-3">Hyperledger Fabric</span>
+                        <span class="inline-block bg-blue-50 text-primary text-sm px-2 py-1 rounded mr-3">Node.js</span>
+                    </div>
+                </div>
+                
+                <div class="bg-gray-50 p-6 rounded-lg shadow-sm">
+                    <div class="flex flex-col md:flex-row md:items-center justify-between mb-2">
+                        <h3 class="text-xl font-semibold text-dark">"Challenge Cup" College Student Extracurricular Academic Science and Technology Works Competition</h3>
+                        <div class="flex items-center mt-2 md:mt-0">
+                            <span class="text-gray-500 mr-3">Nov 2022 - Apr 2023</span>
+                            <span class="bg-green-50 text-green-700 text-xs px-2 py-1 rounded">University First Prize</span>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-4">Network attack forensics system based on graph neural network to improve the response efficiency of network security incidents.</p>
+                    <div class="flex items-center">
+                        <span class="inline-block bg-blue-50 text-primary text-sm px-2 py-1 rounded mr-3">PyTorch</span>
+                        <span class="inline-block bg-blue-50 text-primary text-sm px-2 py-1 rounded mr-3">GNN</span>
+                        <span class="inline-block bg-blue-50 text-primary text-sm px-2 py-1 rounded mr-3">Python</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Github Projects -->
+    <section id="github" class="py-16 bg-gray-50 section-fade">
+        <div class="container mx-auto px-4 max-w-4xl">
+            <h2 class="text-2xl font-bold mb-8 pb-2 border-b border-gray-200">Github Projects</h2>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-white p-5 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                    <div class="flex justify-between items-start mb-3">
+                        <h3 class="text-lg font-semibold">network-visualization</h3>
+                        <span class="text-gray-500 text-sm">24 stars</span>
+                    </div>
+                    <p class="text-gray-600 text-sm mb-3">Complex network risk propagation visualization simulation system</p>
+                    <div class="flex flex-wrap gap-2 mb-3">
+                        <span class="bg-gray-100 text-gray-600 text-xs px-2 py-1 rounded">Python</span>
+                        <span class="bg-gray-100 text-gray-600 text-xs px-2 py-1 rounded">Django</span>
+                        <span class="bg-gray-100 text-gray-600 text-xs px-2 py-1 rounded">D3.js</span>
+                    </div>
+                    <a href="https://github.com/StuBoo3i/network-visualization" target="_blank" class="text-primary hover:text-blue-700 text-sm flex items-center">
+                        <i class="fa fa-github mr-1"></i> View Project
+                    </a>
+                </div>
+                
+                <div class="bg-white p-5 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                    <div class="flex justify-between items-start mb-3">
+                        <h3 class="text-lg font-semibold">cpp-security-evaluator</h3>
+                        <span class="text-gray-500 text-sm">18 stars</span>
+                    </div>
+                    <p class="text-gray-600 text-sm mb-3">C++ program security evaluation system</p>
+                    <div class="flex flex-wrap gap-2 mb-3">
+                        <span class="bg-gray-100 text-gray-600 text-xs px-2 py-1 rounded">C++</span>
+                        <span class="bg-gray-100 text-gray-600 text-xs px-2 py-1 rounded">Qt</span>
+                        <span class="bg-gray-100 text-gray-600 text-xs px-2 py-1 rounded">MongoDB</span>
+                    </div>
+                    <a href="https://github.com/StuBoo3i/cpp-security-evaluator" target="_blank" class="text-primary hover:text-blue-700 text-sm flex items-center">
+                        <i class="fa fa-github mr-1"></i> View Project
+                    </a>
+                </div>
+                
+                <div class="bg-white p-5 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                    <div class="flex justify-between items-start mb-3">
+                        <h3 class="text-lg font-semibold">gnn-attack-detection</h3>
+                        <span class="text-gray-500 text-sm">32 stars</span>
+                    </div>
+                    <p class="text-gray-600 text-sm mb-3">Network attack detection model based on graph neural network</p>
+                    <div class="flex flex-wrap gap-2 mb-3">
+                        <span class="bg-gray-100 text-gray-600 text-xs px-2 py-1 rounded">Python</span>
+                        <span class="bg-gray-100 text-gray-600 text-xs px-2 py-1 rounded">PyTorch</span>
+                        <span class="bg-gray-100 text-gray-600 text-xs px-2 py-1 rounded">GNN</span>
+                    </div>
+                    <a href="https://github.com/StuBoo3i/gnn-attack-detection" target="_blank" class="text-primary hover:text-blue-700 text-sm flex items-center">
+                        <i class="fa fa-github mr-1"></i> View Project
+                    </a>
+                </div>
+                
+                <div class="bg-white p-5 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                    <div class="flex justify-between items-start mb-3">
+                        <h3 class="text-lg font-semibold">blockchain-supplychain</h3>
+                        <span class="text-gray-500 text-sm">15 stars</span>
+                    </div>
+                    <p class="text-gray-600 text-sm mb-3">Blockchain-based supply chain trusted authentication system</p>
+                    <div class="flex flex-wrap gap-2 mb-3">
+                        <span class="bg-gray-100 text-gray-600 text-xs px-2 py-1 rounded">Hyperledger</span>
+                        <span class="bg-gray-100 text-gray-600 text-xs px-2 py-1 rounded">Node.js</span>
+                    </div>
+                    <a href="https://github.com/StuBoo3i/blockchain-supplychain" target="_blank" class="text-primary hover:text-blue-700 text-sm flex items-center">
+                        <i class="fa fa-github mr-1"></i> View Project
+                    </a>
+                </div>
+            </div>
+            <div class="mt-8 text-center">
+                <a href="https://github.com/StuBoo3i" target="_blank" class="inline-flex items-center px-4 py-2 border border-primary text-primary bg-white rounded-lg hover:bg-primary hover:text-white transition-colors">
+                    <i class="fa fa-github mr-2"></i> View More Projects
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-white section-fade">
+        <div class="container mx-auto px-4 max-w-4xl">
+            <h2 class="text-2xl font-bold mb-8 pb-2 border-b border-gray-200">Contact Me</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div>
+                    <div class="space-y-4">
+                        <div class="flex items-center">
+                            <div class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-primary mr-4">
+                                <i class="fa fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-medium">Email</h3>
+                                <p class="text-gray-600">neuwangjiabo@163.com</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="font-medium mb-4">Social Platforms</h3>
+                    <div class="grid grid-cols-2 gap-4">
+                        
+                        <a href="https://zhihu.com/people/StuBoo3i" target="_blank" class="flex items-center p-3 border border-gray-100 rounded-lg hover:border-primary hover:bg-blue-50 transition-colors">
+                            <i class="fa fa-book text-xl text-primary mr-3"></i>
+                            <div>
+                                <p class="font-medium">Zhihu</p>
+                                <p class="text-sm text-gray-600">StuBoo3i</p>
+                            </div>
+                        </a>
+                        
+                        <a href="https://github.com/StuBoo3i" target="_blank" class="flex items-center p-3 border border-gray-100 rounded-lg hover:border-primary hover:bg-blue-50 transition-colors">
+                            <i class="fa fa-github text-xl text-primary mr-3"></i>
+                            <div>
+                                <p class="font-medium">Github</p>
+                                <p class="text-sm text-gray-600">StuBoo3i</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-8">
+        <div class="container mx-auto px-4 text-center">
+            <p>© 2024 StuBoo3i. All rights reserved.</p>
+            <p class="text-gray-400 text-sm mt-2">AI Security Research | Master Student @ Xi'an Jiaotong University</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('menuBtn').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobileMenu');
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Scroll reveal animation
+        document.addEventListener('DOMContentLoaded', function() {
+            const sections = document.querySelectorAll('.section-fade');
+            
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
+            
+            const observer = new IntersectionObserver(function(entries, observer) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('section-visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+            
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+        });
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu
+                    document.getElementById('mobileMenu').classList.add('hidden');
+                }
+            });
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.classList.add('py-2');
+                header.classList.remove('py-4');
+            } else {
+                header.classList.add('py-4');
+                header.classList.remove('py-2');
+            }
+        });
+    </script>
+</body>
+</html>
